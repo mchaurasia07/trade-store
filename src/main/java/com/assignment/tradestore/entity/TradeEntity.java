@@ -3,8 +3,6 @@ package com.assignment.tradestore.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import java.sql.Date;
 import java.time.LocalDate;
 
 import com.assignment.tradestore.model.Trade;
@@ -21,11 +19,11 @@ public class TradeEntity {
     private LocalDate createdDate;
     private String expiredFlag;
 
-    public TradeEntity(){
+    public TradeEntity() {
         createdDate = LocalDate.now();
     }
 
-    public TradeEntity(Trade trade){
+    public TradeEntity(Trade trade) {
         this.tradeId = trade.getTradeId();
         this.version = trade.getVersion();
         this.counterPartyId = trade.getCounterPartyId();
@@ -34,6 +32,7 @@ public class TradeEntity {
         this.expiredFlag = "N";
         createdDate = LocalDate.now();
     }
+
     public String getTradeId() {
         return tradeId;
     }

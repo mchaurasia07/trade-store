@@ -1,8 +1,5 @@
 package com.assignment.tradestore.exception;
 
-import com.assignment.tradestore.entity.TradeEntity;
-import com.assignment.tradestore.model.Trade;
-
 public class InvalidTradeException extends Exception {
 
 
@@ -10,7 +7,6 @@ public class InvalidTradeException extends Exception {
         super(message);
 
     }
-
 
 
 }

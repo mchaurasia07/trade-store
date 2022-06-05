@@ -177,7 +177,7 @@ class TradeStoreTests{
 						.contentType(MediaType.APPLICATION_JSON)
 						.content("{\"tradeId\":\"T1\",\"version\":1,\"counterPartyId\":\"CP-1\",\"bookId\":\"book-1\",\"maturityDate\":\"2023-01-01\"}")
 						.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
+				.andExpect(status().isCreated())
 				.andExpect(MockMvcResultMatchers.jsonPath("$.message").value("SUCCESS"));
 	}
 
@@ -213,9 +213,6 @@ class TradeStoreTests{
 				.andExpect(status().isNotAcceptable())
 				.andExpect(MockMvcResultMatchers.jsonPath("$.message").value("not acceptable"))
 				.andExpect(MockMvcResultMatchers.jsonPath("$.details[0]").value("version should not be lower than existing version 10: 1"));
-
-		assertEquals(tradeEntity.toString(), "Trade{tradeId='T2', version=10, counterParty='CP-2', bookId='book-2', maturityDate=2022-06-05, createdDate=2022-06-05, expiredFlag='N'}");
-
 	}
 
 	@Test

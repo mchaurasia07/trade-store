@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "f8c6747a-2e82-4432-a31e-fb8d8886e622",
+		"name": "trade-store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllTrades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/trade/T1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trade",
+						"T1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create trade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tradeId\": \"T1\",\r\n    \"version\": 2,\r\n    \"counterPartyId\":\"CP-1\", \r\n    \"bookId\" : \"book-1\",\r\n    \"maturityDate\": \"2023-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/trade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trade"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,8 +1,6 @@
 package com.assignment.tradestore.service;
 
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 import com.assignment.tradestore.entity.TradeEntity;
