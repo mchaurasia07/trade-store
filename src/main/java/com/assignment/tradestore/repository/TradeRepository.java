@@ -11,6 +11,12 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TradeRepository extends JpaRepository<TradeEntity, String> {
+    /**
+     * update the expiredFlag to N for the records which has maturity date less than today's date and expiredFlag is 'Y'
+     * @param expiredFlag N for expired
+     * @param date current date
+     * @return num of records updated
+     */
     @Modifying
     @Query("update TradeEntity t set t.expiredFlag = 'Y' where t.expiredFlag = :expiredFlag and t.maturityDate < :date")
     int expireTrade(@Param(value = "expiredFlag") String expiredFlag, @Param(value = "date") LocalDate date);

@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
+/**
+ * represent the trade controller which expose the rest end points
+ */
 @RestController
 public class TradeController {
     private static final Logger LOGGER = LoggerFactory.getLogger(TradeController.class);

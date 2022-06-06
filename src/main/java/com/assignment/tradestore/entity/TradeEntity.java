@@ -7,6 +7,9 @@ import java.time.LocalDate;
 
 import com.assignment.tradestore.model.Trade;
 
+/**
+ * represent hibernate entity.
+ */
 @Entity
 @Table(name = "Trades")
 public class TradeEntity {
@@ -19,10 +22,12 @@ public class TradeEntity {
     private LocalDate createdDate;
     private String expiredFlag;
 
+    //no args constructor
     public TradeEntity() {
         createdDate = LocalDate.now();
     }
 
+    // constructor wto init the entity with trade
     public TradeEntity(Trade trade) {
         this.tradeId = trade.getTradeId();
         this.version = trade.getVersion();
